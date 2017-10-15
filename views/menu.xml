@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+    <!--MENU PARENT-->
+    <menuitem
+        id="menu_signatory_top"
+        name="Signatory"
+        groups="base.group_no_one"
+        sequence="1"/>
+    <!--END MENU PARENT-->
+
+    <!--MENU CHILD-->
+    <menuitem
+        id="menu_signatory_top_left"
+        name="Signatory"
+        parent="menu_signatory_top"
+        action="action_signatory"/>
+    </data>
+</odoo>
