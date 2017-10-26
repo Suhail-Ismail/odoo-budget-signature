@@ -1,17 +1,15 @@
 # -*- coding: utf-8 -*-
 import os
 import base64
-import cStringIO
+
 from io import BytesIO
 
-import PIL
 from PIL import ImageFont
 from PIL import Image
 from PIL import ImageDraw
 
 from odoo import models, fields, api, _
 
-# TODO update base dir with odoo config
 from odoo.exceptions import ValidationError
 
 base_dir = os.path.dirname(os.path.realpath(__file__))
@@ -75,7 +73,7 @@ class Signatory(models.Model):
     def _compute_signature_image(self):
         if not self.name or not self.designation:
             return
-        jpeg_image_buffer = cStringIO.StringIO()
+        jpeg_image_buffer = BytesIO()
         img = Image.new("RGBA", signature_frame_dim)
         draw = ImageDraw.Draw(img)
 
